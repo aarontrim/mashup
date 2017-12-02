@@ -66,7 +66,7 @@ def search():
                 city = qs[0] + "%"
                 state = qs[1]
                 print(state, len(state))
-                if len(state) != 2:
+                if len(state) > 3:
                     results = db.execute("SELECT * FROM places WHERE place_name LIKE :city AND admin_name1 LIKE :state", city=city, state=state + "%")
                 else:
                     results = db.execute("SELECT * FROM places WHERE place_name LIKE :city AND admin_code1 = :state", city=city, state=state)
@@ -76,7 +76,7 @@ def search():
             state = qs[1] + "%"
             postcode = qs[2] + "%"
             
-            if len(state) != 2:
+            if len(state) > 3:
                 results = db.execute("SELECT * FROM places WHERE place_name LIKE :city AND admin_name1 LIKE :state AND postal_code LIKE :postcode", city=city, state=state + "%", postcode=postcode)
             else:
                 results = db.execute("SELECT * FROM places WHERE place_name LIKE :city AND admin_code = :state AND postal_code LIKE :postcode", city=city, state=state, postcode=postcode)

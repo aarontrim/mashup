@@ -40,7 +40,7 @@ $(function() {
     // options for map
     // https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     var options = {
-        center: {lat: 42.3770, lng: -71.1256}, // Cambridge, MA
+        center: {lat: -33.8678, lng: 151.2073}, // Sydney, NSW
         disableDefaultUI: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         maxZoom: 14,
